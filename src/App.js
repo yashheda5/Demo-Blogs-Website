@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Header from './Components/Header';
+import Blogs from './Components/Blogs';
+import Pagination from './Components/Pagination';
+import { useContext, useEffect } from 'react';
+import { AppContext } from './Context/AppContext';
 function App() {
+  const {fetchBlogPosts}=useContext(AppContext);
+  useEffect(() => {fetchBlogPosts();},[]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex flex-col w-full h-full gap-y-6 justify-center items-center' >
+    <Header/>
+    <Blogs/>
+    <Pagination/>
     </div>
   );
 }
