@@ -23,7 +23,7 @@ To set up the project locally, follow these steps:
 
 2. **Navigate to the project directory:**
     ```sh
-    cd study-notion
+    cd Demo-Blogs-Website
 
     ```
 
